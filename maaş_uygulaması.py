@@ -26,7 +26,7 @@ def is_float_digit(n: str) -> bool:
      except ValueError:
          return False
 
-adı = str(input("Çalışanın ismi:\n"))
+adı = input("Çalışanın ismi:\n")
 while adı.isalpha() == False:
 	print("Lütfen alfabetik karakterler giriniz:")
 	adı = str(input("Çalışanın ismi:\n"))
@@ -94,37 +94,44 @@ günlük_kazanç = saat * gün
 haftalık_kazanç = günlük_kazanç * hafta
 aylık_kazanç = haftalık_kazanç * 4
 if aylık_kazanç <= 5004:
-	sgk = aylık_kazanç * 14 / 100
-	sig = aylık_kazanç * 1 / 100
+	sgk = (aylık_kazanç * 14) / 100
+	sig = (aylık_kazanç * 1) / 100
 	vergili = aylık_kazanç - (sgk + sig)
 	net = vergili + y
 	print(f"Çalışanın ismi:{adı}\nMedeni durumu:{medeni}\nEş çalışma durumu:{eşçalışma}\nÇalışanın kaç çocuğu var:{çocuk}\nÇalışanın saatlik ücreti:{saat}\nGünde kaç saat çalışıyor:{gün}\nHaftada kaç gün çalışıyor:{hafta}\nÇalışanın günlük kazancı:{günlük_kazanç}")
-	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\n")
-if aylık_kazanç > 5004 or aylık_kazanç <= 32000:
+	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın bürüt aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\nÇalışanın İşsizlik SİG. Primi:{sig}\nÇalışanın vergiler çıkınca aylık kazancı:{vergili}\nÇalışanın net aylık kazancı:{net}")
+if aylık_kazanç > 5004 and aylık_kazanç <= 32000:
 	sgk = aylık_kazanç * 14 / 100
 	sig = aylık_kazanç * 1 / 100
 	gelir_vergisi = aylık_kazanç * 15 / 100
 	vergili = aylık_kazanç - (sgk + sig + gelir_vergisi)
-
-if aylık_kazanç > 32000 or aylık_kazanç <= 70000:
+	print(f"Çalışanın ismi:{adı}\nMedeni durumu:{medeni}\nEş çalışma durumu:{eşçalışma}\nÇalışanın kaç çocuğu var:{çocuk}\nÇalışanın saatlik ücreti:{saat}\nGünde kaç saat çalışıyor:{gün}\nHaftada kaç gün çalışıyor:{hafta}\nÇalışanın günlük kazancı:{günlük_kazanç}")
+	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın bürüt aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\nÇalışanın İşsizlik SİG. Primi:{sig}\nÇalışanın vergiler çıkınca aylık kazancı:{vergili}\nÇalışanın net aylık kazancı:{net}")
+if aylık_kazanç > 32000 and aylık_kazanç <= 70000:
 	sgk = aylık_kazanç * 14 / 100
 	sig = aylık_kazanç * 1 / 100
 	gelir_vergisi = (aylık_kazanç - 32000) * 20 / 100
 	vergili = aylık_kazanç - (sgk + sig + gelir_vergisi + 4800)
-if aylık_kazanç > 70000 or aylık_kazanç <= 250000:
+	print(f"Çalışanın ismi:{adı}\nMedeni durumu:{medeni}\nEş çalışma durumu:{eşçalışma}\nÇalışanın kaç çocuğu var:{çocuk}\nÇalışanın saatlik ücreti:{saat}\nGünde kaç saat çalışıyor:{gün}\nHaftada kaç gün çalışıyor:{hafta}\nÇalışanın günlük kazancı:{günlük_kazanç}")
+	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın bürüt aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\nÇalışanın İşsizlik SİG. Primi:{sig}\nÇalışanın vergiler çıkınca aylık kazancı:{vergili}\nÇalışanın net aylık kazancı:{net}")
+if aylık_kazanç > 70000 and aylık_kazanç <= 250000:
 	sgk = aylık_kazanç * 14 / 100
 	sig = aylık_kazanç * 1 / 100
 	gelir_vergisi = (aylık_kazanç - 70000) * 27 / 100
 	vergili = aylık_kazanç - (sgk + sig + gelir_vergisi + 12400)
-
-if aylık_kazanç > 250000 or aylık_kazanç <= 880000:
+	print(f"Çalışanın ismi:{adı}\nMedeni durumu:{medeni}\nEş çalışma durumu:{eşçalışma}\nÇalışanın kaç çocuğu var:{çocuk}\nÇalışanın saatlik ücreti:{saat}\nGünde kaç saat çalışıyor:{gün}\nHaftada kaç gün çalışıyor:{hafta}\nÇalışanın günlük kazancı:{günlük_kazanç}")
+	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın bürüt aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\nÇalışanın İşsizlik SİG. Primi:{sig}\nÇalışanın vergiler çıkınca aylık kazancı:{vergili}\nÇalışanın net aylık kazancı:{net}")
+if aylık_kazanç > 250000 and aylık_kazanç <= 880000:
 	sgk = aylık_kazanç * 14 / 100
 	sig = aylık_kazanç * 1 / 100
 	gelir_vergisi = (aylık_kazanç - 250000) * 35 / 100
 	vergili = aylık_kazanç - (sgk + sig + gelir_vergisi + 61000)
-
-if aylık_kazanç >= 880000:
+	print(f"Çalışanın ismi:{adı}\nMedeni durumu:{medeni}\nEş çalışma durumu:{eşçalışma}\nÇalışanın kaç çocuğu var:{çocuk}\nÇalışanın saatlik ücreti:{saat}\nGünde kaç saat çalışıyor:{gün}\nHaftada kaç gün çalışıyor:{hafta}\nÇalışanın günlük kazancı:{günlük_kazanç}")
+	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın bürüt aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\nÇalışanın İşsizlik SİG. Primi:{sig}\nÇalışanın vergiler çıkınca aylık kazancı:{vergili}\nÇalışanın net aylık kazancı:{net}")
+if aylık_kazanç > 880000:
 	sgk = aylık_kazanç * 14 / 100
 	sig = aylık_kazanç * 1 / 100
 	gelir_vergisi = (aylık_kazanç - 880000) * 40 / 100
 	vergili = aylık_kazanç - (sgk + sig + gelir_vergisi + 281000)
+	print(f"Çalışanın ismi:{adı}\nMedeni durumu:{medeni}\nEş çalışma durumu:{eşçalışma}\nÇalışanın kaç çocuğu var:{çocuk}\nÇalışanın saatlik ücreti:{saat}\nGünde kaç saat çalışıyor:{gün}\nHaftada kaç gün çalışıyor:{hafta}\nÇalışanın günlük kazancı:{günlük_kazanç}")
+	print(f"Çalışanın haftalık kazancı:{haftalık_kazanç}\nÇalışanın bürüt aylık kazancı:{aylık_kazanç}\nÇalışanın SGK pirimi:{sgk}\nÇalışanın İşsizlik SİG. Primi:{sig}\nÇalışanın vergiler çıkınca aylık kazancı:{vergili}\nÇalışanın net aylık kazancı:{net}")
