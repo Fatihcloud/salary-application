@@ -18,6 +18,12 @@ prim = {
 	'3':603,
 	'4':642.5
 }
+prim2 = {
+	'0':481.5, 
+	'1':543,
+	'2':603,
+	'3':684,
+}
 # Digit yetersiz float için o yüzden bunu kulanıcaz
 def is_float_digit(n: str) -> bool:
      try:
@@ -53,17 +59,13 @@ while evbe != "y" or evbe != "n":
 				eşçalışma = "Eşiniz çalışmıyor"
 				y = 481.5
 				çocuk = (input("Kaç çocuğunuz var?\n"))
-				while çocuk.isalpha() == False:
+				while çocuk.isalpha() == True:
 					print(f"Senin çocuğun {çocuk} bu mu lütfen bir sayı gir:")
 					çocuk = (input("Kaç çocuğunuz var?\n"))
-				if çocuk == 0:
-					y = 481.5
-				if çocuk == 1:
-					y = 543
-				if çocuk == 2:
-					y = 603
-				if çocuk >= 3:
+				if int(str(çocuk)) >= 4:
 					y = 684
+				else:
+					y = prim2[çocuk]
 				break
 			print("Lütfen sadece y/n diyiniz:")
 			eş = input("Eşiniz çalışıyor mu? y/n\n")
@@ -82,14 +84,14 @@ saat = float(deger)
 while is_float_digit(saat) == False and saat.isalpha == True:
 	print("Lütfen sayı giriniz:\n")
 	saat = float(input("Saatlik ücreti:\n"))
-gün = float(input("Günde kaç saat çalışıyor:\n"))
-while gün > 24 and gün.isdigit() == False:
-	print("Günde en fazla 24 saat var lütfen bir daha giriniz!\n")
-	gün = float(input("Günde kaç saat çalışıyor:\n"))
-hafta = float(input("Haftada kaç gün çalışıyor:\n"))
-while hafta > 7 and hafta.isdigit() == False:
+gün = int(input("Günde kaç saat çalışıyor:\n"))
+while gün > 24 or gün.isdigit() == False:
+	print("Günde en fazla 24 saat var lütfen bir daha giriniz!")
+	gün = int(input("Günde kaç saat çalışıyor:\n"))
+hafta = int(input("Haftada kaç gün çalışıyor:\n"))
+while hafta > 7 or hafta.isdigit() == False:
 	print("Haftada 7 gün var lütfen bir daha giriniz\n")
-	hafta = float(input("Haftada kaç gün çalışıyor:\n"))
+	hafta = int(input("Haftada kaç gün çalışıyor:\n"))
 günlük_kazanç = saat * gün
 haftalık_kazanç = günlük_kazanç * hafta
 aylık_kazanç = haftalık_kazanç * 4
